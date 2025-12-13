@@ -3,6 +3,8 @@ class TrieNode:
         self.chd = {}
         self.is_end = 0
         self.dp = 0
+
+
 def build_trie(words):
     root = TrieNode()
     for w in words:
@@ -13,12 +15,16 @@ def build_trie(words):
             node = node.chd[s]
         node.is_end = 1
     return root
+
+
 def dfs(u):
     product = 1
     for v in u.chd.values():
         dfs(v)
         product *= v.dp
     u.dp = product + u.is_end
+
+
 n = int(input())
 words = [input() for _ in range(n)]
 root = build_trie(words)
