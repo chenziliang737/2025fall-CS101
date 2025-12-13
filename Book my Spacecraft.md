@@ -770,22 +770,17 @@ for _ in range(n):
 ```python
 # 感受边界条件的复杂性
 def binary_search(nums, target):
-    l = ___(1)
-    ___
-    r = ___(2)
-    ___
+    l = ___(1)___
+    r = ___(2)___
     while ___(3)___:
-        ___(4)
-        ___
+        ___(4)___
         guess = nums[mid]
         if guess == target:
             return mid
         elif guess < target:
-            ___(5)
-            ___
+            ___(5)___
         else:
-            ___(6)
-            ___
+            ___(6)___
     return None
 
 
