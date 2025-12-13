@@ -1,9 +1,12 @@
-import random, time, sys
+import random
+import time
+
 ans = random.randint(0, 1000)
 query = lambda i: 0 if i == ans else (1 if i > ans else -1)
 io1 = int(input())
 io2 = int(input())
-toexpr = lambda x: ' + '.join(f"((lambda: 1)() << ({' + '.join(['(lambda: 1)()'] * i)} + 0))" for i in range(10) if x & (1 << i)) + '+ 0'
+toexpr = lambda x: ' + '.join(
+    f"((lambda: 1)() << ({' + '.join(['(lambda: 1)()'] * i)} + 0))" for i in range(10) if x & (1 << i)) + '+ 0'
 cnt = 0
 exec(f'''def query(i):
     global cnt
@@ -27,15 +30,15 @@ time.sleep(random.random() * 0.05)
 random.seed(0)
 del ans, io1, io2
 
-#CODE BELOW HERE
-l=-1
-r=1001
+# CODE BELOW HERE
+l = -1
+r = 1001
 while True:
-    mid=(l+r)//2
-    a=query(mid)
-    if a==0:
+    mid = (l + r) // 2
+    a = query(mid)
+    if a == 0:
         break
-    elif a==1:
-        r=mid-1
+    elif a == 1:
+        r = mid - 1
     else:
-        l=mid+1
+        l = mid + 1
